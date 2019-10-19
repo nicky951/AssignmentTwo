@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menunav"
+        android:icon="@drawable/fastfood"
+        android:title="@string/menu_string">
+    </item>
+
+    <item
+        android:id="@+id/ordernav"
+        android:icon="@drawable/checklist"
+        android:title="@string/order_string">
+
+    </item>
+
+</menu>
