@@ -3,6 +3,7 @@ package com.example.assignmenttwo;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 public class ItemDatabase {
@@ -15,7 +16,7 @@ public class ItemDatabase {
         return new ArrayList<Item>((List) Arrays.asList(items.values().toArray()));
     }
 
-    private static final HashMap<Integer, Item> items = new HashMap<>();
+    private static final LinkedHashMap<Integer, Item> items = new LinkedHashMap<>();
 
     static {
         items.put(1, new Item(1, "BK Big One",6, "Burger Kong's Classic Big Burger",R.drawable.burger));
