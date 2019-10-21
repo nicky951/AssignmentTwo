@@ -1163,6 +1163,7 @@ id chronometer
 id clip_horizontal
 id clip_vertical
 id collapseActionView
+id confirm
 id container
 id content
 id contentPanel
@@ -1170,12 +1171,16 @@ id coordinator
 id custom
 id customPanel
 id decor_content_parent
+id decrement
 id default_activity_button
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
+id detaileddescription
+id detailedimage
+id detailedname
 id dialog_button
 id dimensions
 id direct
@@ -1205,11 +1210,13 @@ id icon_group
 id ifRoom
 id image
 id imagesummary
+id increment
 id info
 id invisible
 id italic
 id item_touch_helper_previous_elevation
 id itemnamesummary
+id itemquantity
 id labeled
 id largeLabel
 id left
@@ -1335,6 +1342,7 @@ id up
 id useLogo
 id view_offset_helper
 id visible
+id widget
 id withText
 id wrap
 id wrap_content
@@ -1410,6 +1418,7 @@ layout design_navigation_menu_item
 layout design_text_input_password_icon
 layout fragment_menu
 layout fragment_order
+layout item_detailed
 layout itemsummary
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include

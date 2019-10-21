@@ -41,7 +41,16 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
         holder.priceSummaryTextView.setText("$ " + String.valueOf(itemAtPosition.getPrice()));
 
         //setonclicklisteners here
+        holder.view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Context context = v.getContext();
 
+                Intent intent = new Intent(context, ItemDetail.class);
+                intent.putExtra("itemNum", itemAtPosition.getItemNum());
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
