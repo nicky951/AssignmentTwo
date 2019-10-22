@@ -996,6 +996,10 @@
         "source": "/Users/nicholasliang/.gradle/caches/transforms-2/files-2.1/37ec02f661e3547c5499ecdfd9f3cd1f/appcompat-1.1.0/res/drawable-hdpi-v4/abc_scrubber_control_off_mtrl_alpha.png"
     },
     {
+        "merged": "/Users/nicholasliang/Desktop/Android/AssignmentTwo/app/build/intermediates/res/merged/debug/layout_ordersummary.xml.flat",
+        "source": "/Users/nicholasliang/Desktop/Android/AssignmentTwo/app/src/main/res/layout/ordersummary.xml"
+    },
+    {
         "merged": "/Users/nicholasliang/Desktop/Android/AssignmentTwo/app/build/intermediates/res/merged/debug/drawable_ic_mtrl_chip_close_circle.xml.flat",
         "source": "/Users/nicholasliang/.gradle/caches/transforms-2/files-2.1/cb634fe4b4d1fdfcd5255e485d30a0c1/material-1.0.0/res/drawable/ic_mtrl_chip_close_circle.xml"
     },

@@ -1209,6 +1209,7 @@ id icon
 id icon_group
 id ifRoom
 id image
+id imagedetail
 id imagesummary
 id increment
 id info
@@ -1235,6 +1236,7 @@ id mini
 id mtrl_child_content_container
 id mtrl_internal_children_alpha_tag
 id multiply
+id namedetail
 id navbar
 id navigation_header_container
 id never
@@ -1257,8 +1259,10 @@ id pin
 id pricesummary
 id progress_circular
 id progress_horizontal
+id quantitydetail
 id radio
 id recyclermenu
+id recyclerorder
 id right
 id right_icon
 id right_side
@@ -1330,6 +1334,7 @@ id title_template
 id top
 id topPanel
 id total
+id totaldetail
 id touch_outside
 id transition_current_scene
 id transition_layout_save
@@ -1438,6 +1443,7 @@ layout notification_template_media
 layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout ordersummary
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material

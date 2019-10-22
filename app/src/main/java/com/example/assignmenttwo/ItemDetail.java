@@ -52,7 +52,7 @@ public class ItemDetail extends AppCompatActivity {
                 int currentQuantity = Integer.parseInt((String)quantity.getText());
                 currentQuantity += 1;
 
-                price.setText("$"+ String.format("%.2f",(double)(item.getPrice() * currentQuantity)));
+                price.setText(String.format("%.2f",(double)(item.getPrice() * currentQuantity)));
                 quantity.setText(String.valueOf(currentQuantity));
             }
         });
@@ -66,11 +66,23 @@ public class ItemDetail extends AppCompatActivity {
                 if(currentQuantity > 0) {
                     currentQuantity -= 1;
 
-                    price.setText("$"+ String.format("%.2f",(double)(item.getPrice() * currentQuantity)));
+                    price.setText(String.format("%.2f",(double)(item.getPrice() * currentQuantity)));
                     quantity.setText(String.valueOf(currentQuantity));
                 }
             }
         });
 
+        confirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                int currentQuantity = Integer.parseInt((String)quantity.getText());
+                double currentPrice = Double.parseDouble((String)price.getText());
+
+                ItemTotal itemTotal = new ItemTotal(item, currentPrice, currentQuantity);
+
+                ItemList.addOrder(itemTotal);
+            }
+        });
     }
 }
