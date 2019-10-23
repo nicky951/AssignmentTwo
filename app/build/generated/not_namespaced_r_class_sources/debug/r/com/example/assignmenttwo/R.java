@@ -37,6 +37,8 @@ public final class R {
     public static final int design_bottom_sheet_slide_out=0x7f010019;
     public static final int design_snackbar_in=0x7f01001a;
     public static final int design_snackbar_out=0x7f01001b;
+    public static final int slide_left=0x7f01001c;
+    public static final int slide_right=0x7f01001d;
   }
   public static final class animator {
     public static final int design_appbar_state_list_animator=0x7f020000;

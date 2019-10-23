@@ -1,5 +1,6 @@
 package com.example.assignmenttwo;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -49,6 +50,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
                 Intent intent = new Intent(context, ItemDetail.class);
                 intent.putExtra("itemNum", itemAtPosition.getItemNum());
                 context.startActivity(intent);
+                ((Activity) context).overridePendingTransition(R.anim.slide_left, R.anim.slide_right);
             }
         });
     }
