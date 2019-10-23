@@ -3,10 +3,12 @@ package com.example.assignmenttwo;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -80,14 +82,23 @@ public class ItemDetail extends AppCompatActivity {
                 int currentQuantity = Integer.parseInt((String)quantity.getText());
                 double currentPrice = Double.parseDouble((String)price.getText());
 
-                ItemTotal itemTotal = new ItemTotal(item, currentPrice, currentQuantity);
+                if (currentPrice > 0) {
+                    ItemTotal itemTotal = new ItemTotal(item, currentPrice, currentQuantity);
 
-                ItemList.addOrder(itemTotal);
+                    ItemList.addOrder(itemTotal);
 
-                Context context = v.getContext();
+                    Context context = v.getContext();
 
-                Intent intent = new Intent(context, MainActivity.class);
-                context.startActivity(intent);
+                    Intent intent = new Intent(context, MainActivity.class);
+                    context.startActivity(intent);
+
+                } else {
+                    Context context = getApplicationContext();
+
+                    Toast toast = Toast.makeText(context,"You cannot Order 0 Items", Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.CENTER, 0, 0);
+                    toast.show();
+                }
             }
         });
     }

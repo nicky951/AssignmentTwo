@@ -1164,6 +1164,7 @@ id clip_horizontal
 id clip_vertical
 id collapseActionView
 id confirm
+id confirmbutton
 id container
 id content
 id contentPanel
@@ -1197,6 +1198,7 @@ id fill
 id fill_horizontal
 id fill_vertical
 id filled
+id finalprice
 id fixed
 id forever
 id ghost_view
@@ -1334,6 +1336,7 @@ id title_template
 id top
 id topPanel
 id total
+id totalcost
 id totaldetail
 id touch_outside
 id transition_current_scene

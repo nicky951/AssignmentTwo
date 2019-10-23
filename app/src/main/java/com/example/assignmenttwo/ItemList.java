@@ -8,11 +8,14 @@ public class ItemList {
 
     public static void addOrder(ItemTotal totalInstance) {
         totalOrder.add(totalInstance);
-
-        System.out.println("Added instance" + totalInstance.getTotalPrice());
     }
 
     public static ArrayList<ItemTotal> returnList() {
         return totalOrder;
     }
+
+    public static void clearList(){
+        totalOrder.clear();
+    }
+
 }

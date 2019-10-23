@@ -29,6 +29,7 @@ public class TotalAdapter extends RecyclerView.Adapter<TotalAdapter.TotalViewHol
         // Then create an instance of your custom ViewHolder with the View you got from inflating
         // the layout.
         TotalViewHolder TotalViewHolder = new TotalAdapter.TotalViewHolder(view);
+
         return TotalViewHolder;
     }
 
@@ -40,8 +41,6 @@ public class TotalAdapter extends RecyclerView.Adapter<TotalAdapter.TotalViewHol
         holder.quantityTextView.setText(Integer.toString(itemAtPosition.getTotalQuantity()));
         holder.priceTextView.setText(String.format("%.2f", itemAtPosition.getTotalPrice()));
         holder.nameTextView.setText(itemAtPosition.getItem().getName());
-
-
     }
 
     @Override
@@ -65,6 +64,7 @@ public class TotalAdapter extends RecyclerView.Adapter<TotalAdapter.TotalViewHol
             quantityTextView = totalView.findViewById(R.id.quantitydetail);
             nameTextView = totalView.findViewById(R.id.namedetail);
             priceTextView = totalView.findViewById(R.id.totaldetail);
+
         }
     }
 }
