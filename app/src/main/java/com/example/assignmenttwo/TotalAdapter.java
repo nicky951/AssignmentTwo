@@ -38,7 +38,7 @@ public class TotalAdapter extends RecyclerView.Adapter<TotalAdapter.TotalViewHol
 
         holder.imageImageView.setImageResource(itemAtPosition.getItem().getIntDrawableID());
         holder.quantityTextView.setText(Integer.toString(itemAtPosition.getTotalQuantity()));
-        holder.priceTextView.setText(Double.toString(itemAtPosition.getTotalPrice()));
+        holder.priceTextView.setText(String.format("%.2f", itemAtPosition.getTotalPrice()));
         holder.nameTextView.setText(itemAtPosition.getItem().getName());
 
 

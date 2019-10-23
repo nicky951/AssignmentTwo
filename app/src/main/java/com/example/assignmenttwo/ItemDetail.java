@@ -1,5 +1,6 @@
 package com.example.assignmenttwo;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -82,6 +83,11 @@ public class ItemDetail extends AppCompatActivity {
                 ItemTotal itemTotal = new ItemTotal(item, currentPrice, currentQuantity);
 
                 ItemList.addOrder(itemTotal);
+
+                Context context = v.getContext();
+
+                Intent intent = new Intent(context, MainActivity.class);
+                context.startActivity(intent);
             }
         });
     }
