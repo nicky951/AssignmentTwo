@@ -33,21 +33,30 @@
     <TextView
         android:id="@+id/namedetail"
         android:layout_marginStart="20dp"
-        android:layout_width="wrap_content"
+        android:layout_width="115sp"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:text="Name"
+        app:autoSizeTextType="uniform"
+        app:autoSizeMaxTextSize="18sp"
+        app:autoSizeMinTextSize="10sp"
+        app:autoSizeStepGranularity="2sp"
         app:layout_constraintBottom_toBottomOf="@id/imagedetail"
         app:layout_constraintStart_toEndOf="@id/imagedetail">
     </TextView>
 
     <TextView
         android:id="@+id/totaldetail"
-        android:layout_marginEnd="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="35sp"
+        android:layout_marginEnd="10dp"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:textSize="30sp"
         android:text="X.XX"
+        android:gravity="center"
+        app:autoSizeTextType="uniform"
+        app:autoSizeMaxTextSize="30sp"
+        app:autoSizeMinTextSize="10sp"
+        app:autoSizeStepGranularity="2sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">
     </TextView>
