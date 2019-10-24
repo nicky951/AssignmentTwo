@@ -15,8 +15,10 @@ public class ItemDatabase {
         return new ArrayList<Item>((List) Arrays.asList(items.values().toArray()));
     }
 
+    //LinkedHashmap to store data in order that is specified below
     private static final LinkedHashMap<Integer, Item> items = new LinkedHashMap<>();
 
+    //Data
     static {
         items.put(1, new Item(1, "BK Big One",6.50, "Burger Kong's Classic Big Burger",R.drawable.burger));
         items.put(2, new Item(2,"BK Fries",3.50,"Classic Salted Fries",R.drawable.fries));

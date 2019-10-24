@@ -14,10 +14,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
+//Item Adapter Class
 public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder> {
 
+    //Initialise ArrayList of Items
     private ArrayList<Item> itemsToAdapt;
 
+    //Set Data
     public void setData(ArrayList<Item> itemsToAdapt){
         this.itemsToAdapt = itemsToAdapt;
     }
@@ -31,6 +34,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
         return ItemViewHolder;
     }
 
+    //Logic that sets data and onclick listeners
     @Override
     public void onBindViewHolder(@NonNull ItemAdapter.ItemViewHolder holder, int position) {
         final Item itemAtPosition = itemsToAdapt.get(position);
@@ -39,6 +43,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
         holder.nameSummaryTextView.setText(itemAtPosition.getName());
         holder.priceSummaryTextView.setText("$ " + String.valueOf(String.format("%.2f",itemAtPosition.getPrice())));
 
+        //Intent opens a detailed view of Item when clicked
         holder.view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,6 +62,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
         return itemsToAdapt.size();
     }
 
+    //ViewHolder that identifies views from within layouts
     public static class ItemViewHolder extends RecyclerView.ViewHolder {
         public View view;
         public ImageView imageImageView;

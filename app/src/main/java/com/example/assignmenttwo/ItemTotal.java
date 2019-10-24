@@ -1,5 +1,6 @@
 package com.example.assignmenttwo;
 
+//Object that details the Item, Total Price of an Order Instance and Total Quantity of that Order Instance
 public class ItemTotal {
 
     private Item item;

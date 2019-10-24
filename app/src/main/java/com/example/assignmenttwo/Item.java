@@ -1,13 +1,16 @@
 package com.example.assignmenttwo;
 
+//Item Class
 public class Item {
 
+    //Item attributes
     private int itemNum;
     private String name;
     private double price;
     private String description;
     private int intDrawableID;
 
+    //Item Constructor
     public Item(int itemNum, String name, double price, String description, int intDrawableID) {
         this.itemNum = itemNum;
         this.name = name;
@@ -16,6 +19,7 @@ public class Item {
         this.intDrawableID = intDrawableID;
     }
 
+    //Getters and Setters
     public int getItemNum() {
         return itemNum;
     }

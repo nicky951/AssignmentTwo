@@ -15,10 +15,12 @@ import android.view.ViewGroup;
 /**
  * A simple {@link Fragment} subclass.
  */
+//Code for Fragment for Menu Screen
 public class Menu extends Fragment {
 
     private RecyclerView recyclerView;
 
+    //New Instance of Menu
     public static Menu Menu() {
 
         Menu fragment = new Menu();
@@ -26,6 +28,7 @@ public class Menu extends Fragment {
     }
 
 
+    //Set adapter and inflate the different items within the recycler view
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 

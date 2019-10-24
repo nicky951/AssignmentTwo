@@ -14,9 +14,9 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-
 import java.util.ArrayList;
 
+//Adapter for the orders page
 public class TotalAdapter extends RecyclerView.Adapter<TotalAdapter.TotalViewHolder> {
 
     private ArrayList<ItemTotal> itemsToAdapt;
@@ -30,8 +30,6 @@ public class TotalAdapter extends RecyclerView.Adapter<TotalAdapter.TotalViewHol
     public TotalAdapter.TotalViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.ordersummary, parent, false);
 
-        // Then create an instance of your custom ViewHolder with the View you got from inflating
-        // the layout.
         TotalViewHolder TotalViewHolder = new TotalAdapter.TotalViewHolder(view);
 
         return TotalViewHolder;
@@ -41,11 +39,13 @@ public class TotalAdapter extends RecyclerView.Adapter<TotalAdapter.TotalViewHol
     public void onBindViewHolder(@NonNull final TotalAdapter.TotalViewHolder holder, final int position) {
         final ItemTotal itemAtPosition = itemsToAdapt.get(position);
 
+        //Set data for each item on recycler view
         holder.imageImageView.setImageResource(itemAtPosition.getItem().getIntDrawableID());
         holder.quantityTextView.setText(Integer.toString(itemAtPosition.getTotalQuantity()));
         holder.priceTextView.setText(String.format("%.2f", itemAtPosition.getTotalPrice()));
         holder.nameTextView.setText(itemAtPosition.getItem().getName());
 
+        //Delete item logic
         holder.delete.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -71,6 +71,7 @@ public class TotalAdapter extends RecyclerView.Adapter<TotalAdapter.TotalViewHol
         return itemsToAdapt.size();
     }
 
+    //Identify and bind Ids to elements
     public static class TotalViewHolder extends RecyclerView.ViewHolder {
         public View view;
         public ImageView imageImageView;

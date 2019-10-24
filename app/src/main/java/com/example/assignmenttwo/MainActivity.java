@@ -18,13 +18,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Set BottomNavigation View
         BottomNavigationView bottomNavigationView = findViewById(R.id.navbar);
         final FragmentManager fragmentManager = getSupportFragmentManager();
 
+        //Logic to switch between Fragments using Bottom Naviation Bar
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
 
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+
+                //Source Code/Inspiration: https://stackoverflow.com/questions/44424985/switch-between-fragments-in-bottomnavigationview
                 Fragment currentSelected = null;
 
                 switch (menuItem.getItemId()){

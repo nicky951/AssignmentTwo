@@ -1,9 +1,5 @@
 package com.example.assignmenttwo;
 
-
-
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -26,17 +22,20 @@ import android.widget.Toast;
 /**
  * A simple {@link Fragment} subclass.
  */
+
+//Code for Fragment for Order Screen
 public class Order extends Fragment {
 
     private RecyclerView recyclerView;
 
+    //New instance of Order
     public static Order Order() {
-        // Required empty public constructor
         Order fragment = new Order();
         return fragment;
     }
 
 
+    //Sets data in Recycler View for Orders screen
     @Override
     public View onCreateView(final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_order, container, false);
@@ -50,6 +49,7 @@ public class Order extends Fragment {
         totalAdapter.setData(ItemList.returnList());
         recyclerView.setAdapter(totalAdapter);
 
+        //Logic to calculate total price of all item orders using the list of totalorder objects
         double total = 0;
 
         for(int i = 0; i < ItemList.returnList().size(); i++) {
@@ -58,17 +58,21 @@ public class Order extends Fragment {
         TextView price = view.findViewById(R.id.finalprice);
         price.setText("$" + String.format("%.2f", total));
 
+        //Onclicklistener logic for confirm button
         Button confirmOrder = view.findViewById(R.id.confirmbutton);
 
         confirmOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                //Popup that advises the user that the items has been ordered.
                 Toast toast = Toast.makeText(getContext(), "Order Confirmed" , Toast.LENGTH_SHORT );
                 toast.setGravity(Gravity.CENTER, 0, 0);
                 toast.show();
 
                 ItemList.clearList();
 
+                //Reattach fragment to refresh the page
                 final FragmentManager fragmentManager = getFragmentManager();
 
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();

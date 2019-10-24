@@ -23,18 +23,19 @@ public class ItemDetail extends AppCompatActivity {
     private Button decrement;
     private Button confirm;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.item_detailed);
 
+        //Opens up a detailed view of the Item from recycler when clicked
         Intent intent = getIntent();
 
         int itemNum = intent.getIntExtra("itemNum", 0);
 
         final Item item = ItemDatabase.getItemById(itemNum);
 
+        //Attach Id of Elements
         detailImage = findViewById(R.id.detailedimage);
         detailName = findViewById(R.id.detailedname);
         detailDescription = findViewById(R.id.detaileddescription);
@@ -44,10 +45,12 @@ public class ItemDetail extends AppCompatActivity {
         price = findViewById(R.id.total);
         confirm = findViewById(R.id.confirm);
 
+        //Data setting and onclick logic
         detailImage.setImageResource(item.getIntDrawableID());
         detailName.setText(item.getName());
         detailDescription.setText(item.getDescription());
 
+        //Increment Logic
         increment.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -60,6 +63,7 @@ public class ItemDetail extends AppCompatActivity {
             }
         });
 
+        //Decrement Logic
         decrement.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,6 +79,7 @@ public class ItemDetail extends AppCompatActivity {
             }
         });
 
+        //Logic to add quantity, price and item to a list once user clicks confirm
         confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -95,6 +100,7 @@ public class ItemDetail extends AppCompatActivity {
                 } else {
                     Context context = getApplicationContext();
 
+                    //Ensures warning pops up when user tries to order 0 items
                     Toast toast = Toast.makeText(context,"You cannot Order 0 Items", Toast.LENGTH_SHORT);
                     toast.setGravity(Gravity.CENTER, 0, 0);
                     toast.show();
