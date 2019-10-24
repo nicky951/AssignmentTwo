@@ -18,4 +18,7 @@ public class ItemList {
         totalOrder.clear();
     }
 
+    public static void remove(int i) {
+        ItemList.remove(i);
+    }
 }

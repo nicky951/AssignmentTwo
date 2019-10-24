@@ -27,8 +27,6 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
     public ItemAdapter.ItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.itemsummary, parent, false);
 
-        // Then create an instance of your custom ViewHolder with the View you got from inflating
-        // the layout.
         ItemViewHolder ItemViewHolder = new ItemViewHolder(view);
         return ItemViewHolder;
     }
@@ -41,7 +39,6 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
         holder.nameSummaryTextView.setText(itemAtPosition.getName());
         holder.priceSummaryTextView.setText("$ " + String.valueOf(String.format("%.2f",itemAtPosition.getPrice())));
 
-        //setonclicklisteners here
         holder.view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

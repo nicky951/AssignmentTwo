@@ -5,11 +5,13 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
 
 import java.util.ArrayList;
 
@@ -34,13 +36,28 @@ public class TotalAdapter extends RecyclerView.Adapter<TotalAdapter.TotalViewHol
     }
 
     @Override
-    public void onBindViewHolder(@NonNull TotalAdapter.TotalViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final TotalAdapter.TotalViewHolder holder, final int position) {
         final ItemTotal itemAtPosition = itemsToAdapt.get(position);
 
         holder.imageImageView.setImageResource(itemAtPosition.getItem().getIntDrawableID());
         holder.quantityTextView.setText(Integer.toString(itemAtPosition.getTotalQuantity()));
         holder.priceTextView.setText(String.format("%.2f", itemAtPosition.getTotalPrice()));
         holder.nameTextView.setText(itemAtPosition.getItem().getName());
+
+        holder.delete.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                itemsToAdapt.remove(position);
+                notifyItemRemoved(position);
+                notifyItemRangeChanged(position, itemsToAdapt.size());
+
+                Context context = v.getContext();
+
+                Intent intent = new Intent(context, MainActivity.class);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -54,6 +71,7 @@ public class TotalAdapter extends RecyclerView.Adapter<TotalAdapter.TotalViewHol
         public TextView quantityTextView;
         public TextView nameTextView;
         public TextView priceTextView;
+        public Button delete;
 
         public TotalViewHolder(@NonNull View totalView) {
             super(totalView);
@@ -64,6 +82,7 @@ public class TotalAdapter extends RecyclerView.Adapter<TotalAdapter.TotalViewHol
             quantityTextView = totalView.findViewById(R.id.quantitydetail);
             nameTextView = totalView.findViewById(R.id.namedetail);
             priceTextView = totalView.findViewById(R.id.totaldetail);
+            delete = totalView.findViewById(R.id.remove);
 
         }
     }
